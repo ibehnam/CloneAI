@@ -44,3 +44,7 @@ chat_completion = client.chat.completions.create(
 
 print(chat_completion.choices[0].message.content)
 ```
+
+# Why not just use `requests` and send POST requests?
+
+Because using OpenAI's package provides type and completion hints which your IDE can use to help you avoid making mistakes. But when you send POST requests (using the `requests` library), you enter them as a dictionary and the IDE can't validate it.
